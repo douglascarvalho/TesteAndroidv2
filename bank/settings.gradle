@@ -1,5 +1,7 @@
 include ':app'
 include ':features:login'
+include ':libraries:core'
+include ':libraries:extensions'
 include ':libraries:actions'
 include ':libraries:style'
 include ':libraries:network'

@@ -1,0 +1,6 @@
+apply plugin: 'com.android.library'
+
+dependencies {
+    api Dependencies.androidx_appcompat
+    api Dependencies.kotlin_coroutines
+}

@@ -11,8 +11,9 @@ object Config {
 object Versions {
     val androidx_core = "1.0.1"
     val androidx_appcompat = "1.1.0-alpha04"
-    val androidx_recyclerview = "1.0.0"
+    val androidx_recyclerview = "1.1.0-alpha04"
     val androidx_constraintLayout = "1.1.3"
+    val androidx_fragment = "1.1.0-alpha07"
 
     val koin = "2.0.0-rc-2"
 
@@ -21,13 +22,13 @@ object Versions {
     val retrofit = "2.5.0"
     val retrofit_coroutines_adapter = "0.9.2"
 
-
     val junit = "4.12"
     val androidx_espresso = "3.1.0"
     val androidx_testing = "1.1.1"
 
     val gradleandroid = "3.4.0"
     val kotlin = "1.3.21"
+    val kotlin_coroutines = "1.2.0"
 }
 
 object Dependencies {
@@ -35,6 +36,7 @@ object Dependencies {
     val androidx_appcompat = "androidx.appcompat:appcompat:${Versions.androidx_appcompat}"
     val androidx_constraintlayout = "androidx.constraintlayout:constraintlayout:${Versions.androidx_constraintLayout}"
     val androidx_recyclerview = "androidx.recyclerview:recyclerview:${Versions.androidx_recyclerview}"
+    val androidx_fragment = "androidx.fragment:fragment:${Versions.androidx_fragment}"
 
     val koin_android = "org.koin:koin-android:${Versions.koin}"
     val koin_androidx_viewmodel = "org.koin:koin-androidx-viewmodel:${Versions.koin}"
@@ -55,4 +57,5 @@ object Dependencies {
     val tools_kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
 
     val kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
+    val kotlin_coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.kotlin_coroutines}"
 }

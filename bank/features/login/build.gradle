@@ -3,11 +3,14 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
 
 dependencies {
+    implementation project(':libraries:core')
     implementation project(':libraries:style')
     implementation project(':libraries:network')
+    implementation project(':libraries:extensions')
 
     api Dependencies.retrofit
     api Dependencies.retrofit_coroutines_adapter
+    api Dependencies.androidx_material
 
     implementation Dependencies.androidx_appcompat
     implementation Dependencies.androidx_constraintlayout
