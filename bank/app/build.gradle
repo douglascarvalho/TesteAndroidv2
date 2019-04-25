@@ -22,6 +22,8 @@ dependencies {
     implementation project(':features:login')
     implementation project(':libraries:actions')
 
+    implementation Dependencies.koin_android
+
     implementation Dependencies.kotlin_stdlib
     implementation Dependencies.androidx_appcompat
 }

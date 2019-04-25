@@ -7,6 +7,8 @@ dependencies {
 
     implementation Dependencies.androidx_appcompat
     implementation Dependencies.androidx_constraintlayout
+    implementation Dependencies.koin_android
+    implementation Dependencies.koin_androidx_viewmodel
 
     testImplementation Dependencies.testlib_junit
 

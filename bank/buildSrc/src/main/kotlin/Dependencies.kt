@@ -14,6 +14,8 @@ object Versions {
     val androidx_recyclerview = "1.0.0"
     val androidx_constraintLayout = "1.1.3"
 
+    val koin = "2.0.0-rc-2"
+
     val material = "1.1.0-alpha05"
 
     val junit = "4.12"
@@ -29,6 +31,9 @@ object Dependencies {
     val androidx_appcompat = "androidx.appcompat:appcompat:${Versions.androidx_appcompat}"
     val androidx_constraintlayout = "androidx.constraintlayout:constraintlayout:${Versions.androidx_constraintLayout}"
     val androidx_recyclerview = "androidx.recyclerview:recyclerview:${Versions.androidx_recyclerview}"
+
+    val koin_android = "org.koin:koin-android:${Versions.koin}"
+    val koin_androidx_viewmodel = "org.koin:koin-androidx-viewmodel:${Versions.koin}"
 
     val androidx_material = "com.google.android.material:material:${Versions.material}"
 
