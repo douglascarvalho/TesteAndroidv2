@@ -18,6 +18,8 @@ object Versions {
 
     val material = "1.1.0-alpha05"
 
+    val retrofit = "2.5.0"
+
     val junit = "4.12"
     val androidx_espresso = "3.1.0"
     val androidx_testing = "1.1.1"
@@ -36,6 +38,8 @@ object Dependencies {
     val koin_androidx_viewmodel = "org.koin:koin-androidx-viewmodel:${Versions.koin}"
 
     val androidx_material = "com.google.android.material:material:${Versions.material}"
+
+    val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
 
     val testlib_junit = "junit:junit:${Versions.junit}"
 
