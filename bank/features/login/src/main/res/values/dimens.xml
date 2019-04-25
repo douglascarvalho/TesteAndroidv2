@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="login_start_padding">17dp</dimen>
+    <dimen name="login_end_padding">17dp</dimen>
+    <dimen name="logo_top_margin">56dp</dimen>
+    <dimen name="username_top_margin">105dp</dimen>
+    <dimen name="password_top_margin">21dp</dimen>
+    <dimen name="login_button_bottom_margin">33dp</dimen>
+
+</resources>

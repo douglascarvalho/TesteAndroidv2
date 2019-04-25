@@ -5,7 +5,7 @@ apply plugin: 'kotlin-android'
 dependencies {
     implementation project(':libraries:style')
 
-    implementation Dependencies.androidx_material
+    implementation Dependencies.androidx_appcompat
     implementation Dependencies.androidx_constraintlayout
 
     testImplementation Dependencies.testlib_junit
