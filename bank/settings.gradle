@@ -1,1 +1,4 @@
-include ':app', ':features:login', ':libraries:actions'
+include':app',
+        ':features:login',
+        ':libraries:actions',
+        ':libraries:style'
