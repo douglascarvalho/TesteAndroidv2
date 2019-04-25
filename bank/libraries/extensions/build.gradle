@@ -2,8 +2,6 @@ apply plugin: 'com.android.library'
 
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
     api Dependencies.androidx_recyclerview
     api Dependencies.androidx_fragment
     api Dependencies.kotlin_stdlib
