@@ -3,9 +3,10 @@ package com.douglas.login
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.douglas.login.injection.initializeLoginModule
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-private val loadLogin by lazy { Login.init() }
+private val loadLogin by lazy { initializeLoginModule() }
 private fun injectLogin() = loadLogin
 
 class LoginActivity : AppCompatActivity() {

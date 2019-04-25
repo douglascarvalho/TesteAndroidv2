@@ -4,6 +4,10 @@ apply plugin: 'kotlin-android'
 
 dependencies {
     implementation project(':libraries:style')
+    implementation project(':libraries:network')
+
+    api Dependencies.retrofit
+    api Dependencies.retrofit_coroutines_adapter
 
     implementation Dependencies.androidx_appcompat
     implementation Dependencies.androidx_constraintlayout

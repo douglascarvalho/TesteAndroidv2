@@ -2,4 +2,8 @@ apply plugin: 'com.android.library'
 
 dependencies {
     implementation Dependencies.retrofit
+    implementation Dependencies.retrofit_gson_converter
+    implementation Dependencies.retrofit_coroutines_adapter
+
+    implementation Dependencies.kotlin_stdlib
 }
