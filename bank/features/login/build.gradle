@@ -9,8 +9,10 @@ dependencies {
     implementation project(':libraries:extensions')
 
     api Dependencies.retrofit
-    api Dependencies.retrofit_coroutines_adapter
+
     api Dependencies.androidx_material
+    implementation Dependencies.kotlin_stdlib
+    implementation Dependencies.kotlin_coroutines
 
     implementation Dependencies.androidx_appcompat
     implementation Dependencies.androidx_constraintlayout

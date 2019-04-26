@@ -2,5 +2,5 @@
 <resources>
     <string name="username_hint">User</string>
     <string name="password_hint">Password</string>
-    <string name="login">Login</string>
+    <string name="loginRequest">Login</string>
 </resources>

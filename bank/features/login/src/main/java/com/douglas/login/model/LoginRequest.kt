@@ -1,6 +1,6 @@
 package com.douglas.login.model
 
-data class Login (
+data class LoginRequest (
     val user: String,
     val password: String
 )

@@ -1,6 +1,8 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 dependencies {
     api Dependencies.androidx_appcompat
     api Dependencies.kotlin_coroutines
+    api Dependencies.koin_androidx_viewmodel
 }

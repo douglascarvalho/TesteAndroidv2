@@ -1,9 +1,10 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 dependencies {
-    implementation Dependencies.retrofit
-    implementation Dependencies.retrofit_gson_converter
-    implementation Dependencies.retrofit_coroutines_adapter
+    api Dependencies.retrofit
+    api Dependencies.retrofit_gson_converter
+    api Dependencies.retrofit_coroutines_adapter
 
-    implementation Dependencies.kotlin_stdlib
+    api Dependencies.kotlin_stdlib
 }

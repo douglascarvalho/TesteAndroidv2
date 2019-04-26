@@ -37,6 +37,10 @@ subprojects {
                     sourceCompatibility Config.javaVersion
                     targetCompatibility Config.javaVersion
                 }
+
+                packagingOptions {
+                    exclude 'META-INF/atomicfu.kotlin_module'
+                }
             }
         }
     }

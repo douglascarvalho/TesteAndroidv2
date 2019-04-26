@@ -4,5 +4,6 @@ import com.douglas.login.model.UserAccount
 
 sealed class LoginViewState {
     data class Success(val userAccount: UserAccount) : LoginViewState()
-    object Error : LoginViewState()
+    data class Error(val errorMessage: String) : LoginViewState()
+    object NetworkError : LoginViewState()
 }

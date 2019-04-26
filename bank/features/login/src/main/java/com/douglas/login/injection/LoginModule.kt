@@ -1,6 +1,6 @@
 package com.douglas.login.injection
 
-import com.douglas.login.LoginUseCase
+import com.douglas.login.usecase.LoginUseCase
 import com.douglas.login.LoginViewModel
 import com.douglas.login.data.LoginApi
 import com.douglas.network.RetrofitClient

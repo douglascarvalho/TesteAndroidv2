@@ -19,6 +19,7 @@ class LoginActivity : AppCompatActivity() {
     private val username: TextInputEditText by bindView(R.id.username)
     private val password: TextInputEditText by bindView(R.id.password)
     private val loginButton: MaterialButton by bindView(R.id.login)
+
     private val loginViewModel: LoginViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,8 +37,9 @@ class LoginActivity : AppCompatActivity() {
     private fun observe() {
         loginViewModel.viewState.observe(this, Observer {
             when (it) {
-                is LoginViewState.Success -> Toast.makeText(this, "SUCCESS", Toast.LENGTH_LONG).show()
-                is LoginViewState.Error -> Toast.makeText(this, "FAILED", Toast.LENGTH_LONG).show()
+                is LoginViewState.Success ->  Toast.makeText(this, "SUCCESS ${it.userAccount.name}", Toast.LENGTH_LONG).show()
+                is LoginViewState.Error -> Toast.makeText(this, "FAILED ${it.errorMessage}", Toast.LENGTH_LONG).show()
+                is LoginViewState.NetworkError -> ""
             }
         })
     }
