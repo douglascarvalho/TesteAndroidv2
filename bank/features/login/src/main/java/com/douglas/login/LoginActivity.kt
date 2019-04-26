@@ -9,6 +9,8 @@ import androidx.lifecycle.Observer
 import com.douglas.extensions.bindView
 import com.douglas.extensions.onClick
 import com.douglas.login.injection.initializeLoginModule
+import com.douglas.login.model.Error
+import com.douglas.login.model.UserAccount
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
@@ -37,6 +39,7 @@ class LoginActivity : AppCompatActivity() {
 
         loginButton.onClick {
             showLoading()
+            clearErrorMessages()
             loginViewModel.authenticate(username.text.toString(), password.text.toString())
         }
     }
@@ -44,21 +47,38 @@ class LoginActivity : AppCompatActivity() {
     private fun observe() {
         loginViewModel.viewState.observe(this, Observer {
             when (it) {
-                is LoginViewState.Success -> {
-                    usernameLayout.isErrorEnabled = false
-                    passwordLayout.isErrorEnabled = false
-
-                    Toast.makeText(this, "SUCCESS ${it.userAccount.name}", Toast.LENGTH_LONG).show()
-                }
-                is LoginViewState.Error -> {
-                    usernameLayout.error = it.errorMessage
-                    passwordLayout.error = it.errorMessage
-                }
+                is LoginViewState.Success -> loginSuccessful(it.userAccount)
+                is LoginViewState.Error -> loginError(it.error)
                 is LoginViewState.NetworkError -> ""
+                is LoginViewState.InvalidUsername -> invalidUserName()
+                is LoginViewState.WeakPassword -> weakPassword()
             }
 
             hideLoading()
         })
+    }
+
+    private fun loginSuccessful(userAccount: UserAccount) {
+
+        Toast.makeText(this, "SUCCESS ${userAccount.name}", Toast.LENGTH_LONG).show()
+    }
+
+    private fun loginError(error: Error) {
+        usernameLayout.error = error.message
+        passwordLayout.error = error.message
+    }
+
+    private fun invalidUserName() {
+        usernameLayout.error = getString(R.string.username_validation_error)
+    }
+
+    private fun weakPassword() {
+        passwordLayout.error = getString(R.string.password_validation_error)
+    }
+
+    private fun clearErrorMessages() {
+        usernameLayout.isErrorEnabled = false
+        passwordLayout.isErrorEnabled = false
     }
 
     private fun showLoading() {

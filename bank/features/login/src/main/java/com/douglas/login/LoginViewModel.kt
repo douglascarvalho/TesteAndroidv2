@@ -6,6 +6,7 @@ import com.douglas.core.BaseViewModel
 import com.douglas.login.model.Error
 import com.douglas.login.model.LoginRequest
 import com.douglas.login.usecase.LoginUseCase
+import com.douglas.login.validation.LoginValidation
 import kotlinx.coroutines.launch
 
 class LoginViewModel(
@@ -16,9 +17,24 @@ class LoginViewModel(
     val viewState: LiveData<LoginViewState> = state
 
     fun authenticate(username: String, password: String) {
-        signIn(
-            LoginRequest(username, password)
-        )
+        if (isUsernameAndPasswordValid(username, password)) {
+            signIn(LoginRequest(username, password))
+        }
+    }
+
+    private fun isUsernameAndPasswordValid(username: String, password: String): Boolean {
+        var loginValid = true
+
+        if (LoginValidation.isInvalidUsername(username)) {
+            loginValid = false
+            state.value = LoginViewState.InvalidUsername
+        }
+        if (LoginValidation.isWeakPassword(password)) {
+            loginValid = false
+            state.value = LoginViewState.WeakPassword
+        }
+
+        return loginValid
     }
 
     private fun signIn(loginRequest: LoginRequest) {
@@ -28,7 +44,7 @@ class LoginViewModel(
 
                 userAccount?.let {
                     if (hasLoginFailed(it.error)) {
-                        state.value = LoginViewState.Error(it.error.message)
+                        state.value = LoginViewState.Error(it.error)
                     } else {
                         state.value = LoginViewState.Success(it.userAccount)
                     }

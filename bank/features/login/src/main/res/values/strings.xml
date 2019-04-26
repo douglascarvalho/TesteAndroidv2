@@ -3,4 +3,8 @@
     <string name="username_hint">User</string>
     <string name="password_hint">Password</string>
     <string name="loginRequest">Login</string>
+
+    <string name="username_validation_error">Usuário deve ser seu e-mail ou CPF</string>
+    <string name="password_validation_error">Senha deve contar ao menos um número, uma letra maiúscula e um caracter especial</string>
+
 </resources>
