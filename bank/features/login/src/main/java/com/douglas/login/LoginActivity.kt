@@ -3,6 +3,7 @@ package com.douglas.login
 import android.os.Bundle
 import android.view.View
 import android.widget.ProgressBar
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -22,6 +23,7 @@ private fun injectLogin() = loadLogin
 class LoginActivity : AppCompatActivity() {
 
     private val progressBar: ProgressBar by bindView(R.id.progressBar)
+    private val networkErrorMesagge: TextView by bindView(R.id.networkErrorMessage)
     private val usernameLayout: TextInputLayout by bindView(R.id.username_layout)
     private val passwordLayout: TextInputLayout by bindView(R.id.password_layout)
     private val username: TextInputEditText by bindView(R.id.username)
@@ -35,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         injectLogin()
-        observe()
+        observeViewModel()
 
         loginButton.onClick {
             showLoading()
@@ -44,12 +46,12 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun observe() {
+    private fun observeViewModel() {
         loginViewModel.viewState.observe(this, Observer {
             when (it) {
                 is LoginViewState.Success -> loginSuccessful(it.userAccount)
                 is LoginViewState.Error -> loginError(it.error)
-                is LoginViewState.NetworkError -> ""
+                is LoginViewState.NetworkError -> networkError()
                 is LoginViewState.InvalidUsername -> invalidUserName()
                 is LoginViewState.WeakPassword -> weakPassword()
             }
@@ -76,9 +78,14 @@ class LoginActivity : AppCompatActivity() {
         passwordLayout.error = getString(R.string.password_validation_error)
     }
 
+    private fun networkError() {
+        networkErrorMesagge.visibility = View.VISIBLE
+    }
+
     private fun clearErrorMessages() {
         usernameLayout.isErrorEnabled = false
         passwordLayout.isErrorEnabled = false
+        networkErrorMesagge.visibility = View.GONE
     }
 
     private fun showLoading() {

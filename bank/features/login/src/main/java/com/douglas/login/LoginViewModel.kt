@@ -40,7 +40,7 @@ class LoginViewModel(
     private fun signIn(loginRequest: LoginRequest) {
         launch {
             try {
-                val userAccount = loginUseCase.execute(loginRequest)
+                val userAccount = loginUseCase.doLogin(loginRequest)
 
                 userAccount?.let {
                     if (hasLoginFailed(it.error)) {

@@ -6,5 +6,6 @@
 
     <string name="username_validation_error">Usuário deve ser seu e-mail ou CPF</string>
     <string name="password_validation_error">Senha deve contar ao menos um número, uma letra maiúscula e um caracter especial</string>
+    <string name="network_error_message">Ops, tente novamente mais tarde!</string>
 
 </resources>
