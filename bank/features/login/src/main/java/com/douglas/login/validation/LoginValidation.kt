@@ -1,5 +1,7 @@
 package com.douglas.login.validation
 
+import android.util.Patterns
+
 object LoginValidation {
 
     fun isWeakPassword(password: String) : Boolean {
@@ -11,11 +13,8 @@ object LoginValidation {
     }
 
     fun isInvalidUsername(username: String) : Boolean {
-        fun isEmail() : Boolean {
-            return username.matches(
-                "/^[a-z0-9.]+@[a-z0-9]+\\.[a-z]+\\.([a-z]+)?\$/i\n".toRegex()
-            )
-        }
+
+        fun isEmail() = Patterns.EMAIL_ADDRESS.matcher(username).matches()
 
         fun isCPF(): Boolean {
             if (username.isEmpty()) return false

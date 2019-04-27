@@ -52,6 +52,7 @@ class LoginActivity : AppCompatActivity() {
                 is LoginViewState.Success -> loginSuccessful(it.userAccount)
                 is LoginViewState.Error -> loginError(it.error)
                 is LoginViewState.NetworkError -> networkError()
+                is LoginViewState.SuggestLastLoggedUser -> suggestLastLoggedUser(it.user)
                 is LoginViewState.InvalidUsername -> invalidUserName()
                 is LoginViewState.WeakPassword -> weakPassword()
             }
@@ -60,8 +61,11 @@ class LoginActivity : AppCompatActivity() {
         })
     }
 
-    private fun loginSuccessful(userAccount: UserAccount) {
+    private fun suggestLastLoggedUser(user: String) {
+        this.username.setText(user)
+    }
 
+    private fun loginSuccessful(userAccount: UserAccount) {
         Toast.makeText(this, "SUCCESS ${userAccount.name}", Toast.LENGTH_LONG).show()
     }
 

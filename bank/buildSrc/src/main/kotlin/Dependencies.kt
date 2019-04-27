@@ -14,6 +14,7 @@ object Versions {
     val androidx_recyclerview = "1.1.0-alpha04"
     val androidx_constraintLayout = "1.1.3"
     val androidx_fragment = "1.1.0-alpha07"
+    val androidx_room = "2.1.0-alpha07"
 
     val koin = "2.0.0-rc-2"
 
@@ -37,6 +38,8 @@ object Dependencies {
     val androidx_constraintlayout = "androidx.constraintlayout:constraintlayout:${Versions.androidx_constraintLayout}"
     val androidx_recyclerview = "androidx.recyclerview:recyclerview:${Versions.androidx_recyclerview}"
     val androidx_fragment = "androidx.fragment:fragment:${Versions.androidx_fragment}"
+    val androidx_room_runtime = "androidx.room:room-runtime:${Versions.androidx_room}"
+    val androidx_room_compiler = "androidx.room:room-compiler:${Versions.androidx_room}"
 
     val koin_android = "org.koin:koin-android:${Versions.koin}"
     val koin_androidx_viewmodel = "org.koin:koin-androidx-viewmodel:${Versions.koin}"

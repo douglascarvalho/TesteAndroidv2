@@ -7,6 +7,8 @@ sealed class LoginViewState {
     data class Error(val error: com.douglas.login.model.Error) : LoginViewState()
     object NetworkError : LoginViewState()
 
+    data class SuggestLastLoggedUser(val user: String) : LoginViewState()
+
     object InvalidUsername : LoginViewState()
     object WeakPassword : LoginViewState()
 }

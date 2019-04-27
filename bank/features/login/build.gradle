@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 dependencies {
     implementation project(':libraries:core')
@@ -18,6 +19,8 @@ dependencies {
     implementation Dependencies.androidx_constraintlayout
     implementation Dependencies.koin_android
     implementation Dependencies.koin_androidx_viewmodel
+    implementation Dependencies.androidx_room_runtime
+    kapt Dependencies.androidx_room_compiler
 
     testImplementation Dependencies.testlib_junit
 
