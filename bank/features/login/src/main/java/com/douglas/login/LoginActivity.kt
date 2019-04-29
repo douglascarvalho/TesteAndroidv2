@@ -7,6 +7,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import com.douglas.actions.Actions
 import com.douglas.extensions.bindView
 import com.douglas.extensions.onClick
 import com.douglas.login.injection.initializeLoginModule
@@ -48,6 +49,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun observeViewModel() {
         loginViewModel.viewState.observe(this, Observer {
+            hideLoading()
             when (it) {
                 is LoginViewState.Success -> loginSuccessful(it.userAccount)
                 is LoginViewState.Error -> loginError(it.error)
@@ -56,8 +58,6 @@ class LoginActivity : AppCompatActivity() {
                 is LoginViewState.InvalidUsername -> invalidUserName()
                 is LoginViewState.WeakPassword -> weakPassword()
             }
-
-            hideLoading()
         })
     }
 
@@ -67,6 +67,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun loginSuccessful(userAccount: UserAccount) {
         Toast.makeText(this, "SUCCESS ${userAccount.name}", Toast.LENGTH_LONG).show()
+        startActivity(Actions.getStatementIntent(this))
     }
 
     private fun loginError(error: Error) {

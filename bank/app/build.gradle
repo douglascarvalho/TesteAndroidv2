@@ -20,6 +20,7 @@ android {
 
 dependencies {
     implementation project(':features:login')
+    implementation project(':features:statement')
     implementation project(':libraries:actions')
 
     implementation Dependencies.koin_android
