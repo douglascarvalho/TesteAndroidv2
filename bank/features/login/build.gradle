@@ -9,7 +9,6 @@ dependencies {
     implementation project(':libraries:network')
     implementation project(':libraries:extensions')
     implementation project(':libraries:actions')
-    implementation project(':features:statement')
 
     api Dependencies.retrofit
 
