@@ -1,2 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.doug.statement"/>
+          package="com.doug.statement">
+
+    <application android:theme="@style/AppTheme">
+        <activity android:name=".StatementActivity">
+            <intent-filter>
+                <action android:name="com.douglas.intent.action.STATEMENT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
