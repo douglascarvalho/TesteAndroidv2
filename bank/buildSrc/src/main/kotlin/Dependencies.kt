@@ -23,6 +23,8 @@ object Versions {
     val retrofit = "2.5.0"
     val retrofit_coroutines_adapter = "0.9.2"
 
+    val gson = "2.8.5"
+
     val junit = "4.12"
     val androidx_espresso = "3.1.0"
     val androidx_testing = "1.1.1"
@@ -49,6 +51,8 @@ object Dependencies {
     val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     val retrofit_gson_converter = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
     val retrofit_coroutines_adapter = "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${Versions.retrofit_coroutines_adapter}"
+
+    val gson = "com.google.code.gson:gson:${Versions.gson}"
 
     val testlib_junit = "junit:junit:${Versions.junit}"
 
