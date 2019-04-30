@@ -5,8 +5,12 @@ apply plugin: 'kotlin-kapt'
 
 dependencies {
 
+    implementation project(':libraries:actions')
+    implementation project(':libraries:extensions')
     implementation project(':libraries:style')
 
+    api Dependencies.androidx_material
+    implementation Dependencies.kotlin_stdlib
     implementation Dependencies.androidx_appcompat
     implementation Dependencies.androidx_constraintlayout
 

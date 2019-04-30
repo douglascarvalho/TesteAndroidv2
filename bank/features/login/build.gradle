@@ -29,3 +29,7 @@ dependencies {
     androidTestImplementation Dependencies.testandroidx_rules
     androidTestImplementation Dependencies.testandroidx_espressocore
 }
+
+androidExtensions {
+    experimental = true
+}

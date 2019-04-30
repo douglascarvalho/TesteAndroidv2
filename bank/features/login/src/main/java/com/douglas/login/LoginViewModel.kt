@@ -12,7 +12,8 @@ import kotlinx.coroutines.launch
 import java.util.*
 
 class LoginViewModel(
-    private val loginUseCase: LoginUseCase
+    private val loginUseCase: LoginUseCase,
+    private val loginMapper: LoginMapper
 ) : BaseViewModel() {
 
     private val state = MutableLiveData<LoginViewState>()
@@ -55,7 +56,7 @@ class LoginViewModel(
                     if (hasLoginFailed(it.error)) {
                         state.value = LoginViewState.Error(it.error)
                     } else {
-                        state.value = LoginViewState.Success(it.userAccount)
+                        state.value = LoginViewState.Success(loginMapper.mapToStatement(it.userAccount))
                         loginUseCase.saveLastLoggedUser(LastLoggedUser(null, loginRequest.user, Date()))
                     }
                 } ?: run {

@@ -1,6 +1,7 @@
 package com.douglas.login.injection
 
 import androidx.room.Room
+import com.douglas.login.LoginMapper
 import com.douglas.login.usecase.LoginUseCase
 import com.douglas.login.LoginViewModel
 import com.douglas.login.data.LoginApi
@@ -30,7 +31,8 @@ val loginModule = module {
     single { LoginRepository(get(named("local")), get(named("remote"))) }
 
     factory { LoginUseCase(get()) }
+    factory { LoginMapper() }
 
-    viewModel { LoginViewModel(get()) }
+    viewModel { LoginViewModel(get(), get()) }
 
 }

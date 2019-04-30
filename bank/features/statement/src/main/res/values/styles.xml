@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ToolbarStatement" parent="AppTheme">
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="TextViewLabelStatement" parent="android:Widget.TextView">
+        <!--<item name="android:fontFamily">sans-serif-light</item>-->
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="TextViewValueStatement" parent="android:Widget.TextView">
+        <!--<item name="android:fontFamily">sans-serif-light</item>-->
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+</resources>

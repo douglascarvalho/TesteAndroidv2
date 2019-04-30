@@ -4,15 +4,14 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ProgressBar
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.douglas.actions.Actions
+import com.douglas.actions.extras.Account
 import com.douglas.extensions.bindView
 import com.douglas.extensions.onClick
 import com.douglas.login.injection.initializeLoginModule
 import com.douglas.login.model.Error
-import com.douglas.login.model.UserAccount
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
@@ -51,7 +50,7 @@ class LoginActivity : AppCompatActivity() {
         loginViewModel.viewState.observe(this, Observer {
             hideLoading()
             when (it) {
-                is LoginViewState.Success -> loginSuccessful(it.userAccount)
+                is LoginViewState.Success -> loginSuccessful(it.account)
                 is LoginViewState.Error -> loginError(it.error)
                 is LoginViewState.NetworkError -> networkError()
                 is LoginViewState.SuggestLastLoggedUser -> suggestLastLoggedUser(it.user)
@@ -65,9 +64,10 @@ class LoginActivity : AppCompatActivity() {
         this.username.setText(user)
     }
 
-    private fun loginSuccessful(userAccount: UserAccount) {
-        Toast.makeText(this, "SUCCESS ${userAccount.name}", Toast.LENGTH_LONG).show()
-        startActivity(Actions.getStatementIntent(this))
+    private fun loginSuccessful(account: Account) {
+        val intent = Actions.getStatementIntent(this)
+        intent.putExtra(Account.EXTRA_KEY, account)
+        startActivity(intent)
     }
 
     private fun loginError(error: Error) {
