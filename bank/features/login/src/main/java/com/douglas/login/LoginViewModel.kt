@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import com.douglas.core.BaseViewModel
 import com.douglas.login.data.LastLoggedUser
 import com.douglas.login.model.Error
-import com.douglas.login.model.LoginRequest
+import com.douglas.login.data.LoginRequest
 import com.douglas.login.usecase.LoginUseCase
 import com.douglas.login.validation.LoginValidation
 import kotlinx.coroutines.launch

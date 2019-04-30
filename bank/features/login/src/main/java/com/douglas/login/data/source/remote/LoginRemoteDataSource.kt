@@ -3,7 +3,7 @@ package com.douglas.login.data.source.remote
 import com.douglas.login.data.LastLoggedUser
 import com.douglas.login.data.LoginApi
 import com.douglas.login.data.source.LoginDataSource
-import com.douglas.login.model.LoginRequest
+import com.douglas.login.data.LoginRequest
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

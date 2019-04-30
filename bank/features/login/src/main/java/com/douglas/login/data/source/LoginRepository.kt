@@ -1,8 +1,8 @@
 package com.douglas.login.data.source
 
 import com.douglas.login.data.LastLoggedUser
-import com.douglas.login.model.LoginRequest
-import com.douglas.login.model.LoginResponse
+import com.douglas.login.data.LoginRequest
+import com.douglas.login.data.LoginResponse
 
 class LoginRepository (
     private val loginLocalDataSource: LoginDataSource,

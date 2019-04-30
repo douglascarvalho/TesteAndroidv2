@@ -2,8 +2,8 @@ package com.douglas.login.usecase
 
 import com.douglas.login.data.LastLoggedUser
 import com.douglas.login.data.source.LoginRepository
-import com.douglas.login.model.LoginRequest
-import com.douglas.login.model.LoginResponse
+import com.douglas.login.data.LoginRequest
+import com.douglas.login.data.LoginResponse
 
 class LoginUseCase(
     private val loginRepository: LoginRepository

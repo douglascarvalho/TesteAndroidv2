@@ -1,4 +1,4 @@
-package com.douglas.login.model
+package com.douglas.login.data
 
 data class LoginRequest (
     val user: String,
