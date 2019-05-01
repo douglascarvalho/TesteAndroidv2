@@ -22,6 +22,7 @@
 
         <TextView
                 android:id="@+id/statement_title"
+                style="@style/TextViewItemHeader"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="parent"
@@ -30,14 +31,17 @@
 
         <TextView
                 android:id="@+id/statement_date"
+                style="@style/TextViewItemHeader"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="12dp"
                 tools:text="12/12/2018" />
 
         <TextView
                 android:id="@+id/statement_description"
+                style="@style/TextViewItemBody"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -47,12 +51,14 @@
 
         <TextView
                 android:id="@+id/statement_value"
+                style="@style/TextViewItemBody"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:gravity="right"
                 app:layout_constraintTop_toBottomOf="@id/statement_date"
                 app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="20dp"
                 tools:text="R$1.000,00" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

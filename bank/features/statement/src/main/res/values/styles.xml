@@ -5,16 +5,31 @@
         <item name="android:background">@color/colorPrimary</item>
     </style>
 
-    <style name="TextViewLabelStatement" parent="android:Widget.TextView">
-        <!--<item name="android:fontFamily">sans-serif-light</item>-->
-        <item name="android:textSize">12sp</item>
+    <style name="TextViewHeaderStatement" parent="android:Widget.TextView">
         <item name="android:textColor">@android:color/white</item>
+        <item name="android:fontFamily">sans-serif-light</item>
     </style>
 
-    <style name="TextViewValueStatement" parent="android:Widget.TextView">
+    <style name="TextViewLabelStatement" parent="TextViewHeaderStatement">
+        <!--<item name="android:fontFamily">sans-serif-light</item>-->
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TextViewValueStatement" parent="TextViewHeaderStatement">
         <!--<item name="android:fontFamily">sans-serif-light</item>-->
         <item name="android:textSize">25sp</item>
-        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="TextViewItemStatement" parent="android:Widget.TextView">
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="TextViewItemHeader" parent="TextViewItemStatement">
+        <item name="android:textColor">@color/lightGray</item>
+    </style>
+
+    <style name="TextViewItemBody" parent="TextViewItemStatement">
+        <item name="android:textColor">@color/lightBlack</item>
     </style>
 
 </resources>

@@ -10,6 +10,7 @@ import com.doug.statement.model.Statement
 import com.douglas.actions.extras.Account
 import com.douglas.extensions.bindBundle
 import com.douglas.extensions.bindView
+import com.douglas.extensions.toBankAccountFormat
 import com.douglas.extensions.toBrazilianCurrency
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -38,8 +39,10 @@ class StatementActivity : AppCompatActivity() {
         setupStatementList()
 
         accountOwner.text = account.name
-        accountNumber.text = "${account.bankAccount} / ${account.agency}"
+        accountNumber.text = getString(R.string.account_format, account.agency, account.bankAccount.toBankAccountFormat())
         accountBalance.text = account.balance.toBrazilianCurrency()
+
+
 
         statementViewModel.getStatement(account.id)
     }

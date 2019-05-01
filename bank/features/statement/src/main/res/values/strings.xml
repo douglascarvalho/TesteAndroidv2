@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Statement</string>
+
+    <string name="account_format">%1$s / %2$s</string>
 </resources>
