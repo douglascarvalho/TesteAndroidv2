@@ -74,6 +74,7 @@ class LoginActivity : BaseActivity() {
 
     private fun suggestLastLoggedUser(user: String) {
         this.username.setText(user)
+        this.password.requestFocus()
     }
 
     private fun loginSuccessful(account: Account) {

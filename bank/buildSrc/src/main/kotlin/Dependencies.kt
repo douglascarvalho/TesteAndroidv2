@@ -32,6 +32,8 @@ object Versions {
     val gradleandroid = "3.4.0"
     val kotlin = "1.3.21"
     val kotlin_coroutines = "1.2.0"
+
+    val saferoomx = "1.0.2"
 }
 
 object Dependencies {
@@ -65,4 +67,6 @@ object Dependencies {
 
     val kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
     val kotlin_coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.kotlin_coroutines}"
+
+    val saferoomx = "com.commonsware.cwac:saferoom.x:${Versions.saferoomx}"
 }

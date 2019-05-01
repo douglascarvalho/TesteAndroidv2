@@ -1,6 +1,8 @@
 package com.douglas.login.injection
 
+import android.util.Base64
 import androidx.room.Room
+import com.commonsware.cwac.saferoom.SafeHelperFactory
 import com.douglas.login.LoginMapper
 import com.douglas.login.usecase.LoginUseCase
 import com.douglas.login.LoginViewModel
@@ -14,14 +16,17 @@ import com.douglas.network.RetrofitClient
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.core.qualifier.named
-import org.koin.dsl.bind
 import org.koin.dsl.module
 
 internal fun initializeLoginModule() = loadKoinModules(loginModule)
 
 val loginModule = module {
 
-    single { Room.databaseBuilder(get(), LoginDatabase::class.java, "login_database").build() }
+    single {
+        Room.databaseBuilder(get(), LoginDatabase::class.java, "login_database")
+            //.openHelperFactory(SafeHelperFactory(Base64.decode("ZG91Z19wYXNzd29yZA==", Base64.NO_WRAP).toString().toCharArray()))
+            .build()
+    }
     single { get<LoginDatabase>().loginDao() }
 
     single { RetrofitClient.retrofit().create<LoginApi>(LoginApi::class.java) }

@@ -10,6 +10,8 @@ dependencies {
     implementation project(':libraries:extensions')
     implementation project(':libraries:actions')
 
+    implementation Dependencies.saferoomx
+
     api Dependencies.retrofit
 
     api Dependencies.androidx_material
