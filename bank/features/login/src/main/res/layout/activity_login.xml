@@ -34,6 +34,7 @@
                 android:id="@+id/username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="textWebEmailAddress"
                 android:hint="@string/username_hint" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -61,8 +62,8 @@
 
     <com.google.android.material.button.MaterialButton
             android:id="@+id/login"
-            android:layout_width="202dp"
-            android:layout_height="62dp"
+            android:layout_width="@dimen/login_button_bottom_width"
+            android:layout_height="@dimen/login_button_bottom_height"
             android:text="@string/loginRequest"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -93,7 +94,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:textColor="@android:color/holo_red_dark"
             android:gravity="center"
-            android:textSize="14sp"
+            android:textSize="@dimen/network_error_message_text_size"
             android:text="@string/network_error_message"
             android:visibility="gone"
     />

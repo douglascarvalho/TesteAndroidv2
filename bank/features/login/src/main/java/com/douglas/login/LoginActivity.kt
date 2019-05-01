@@ -4,10 +4,10 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ProgressBar
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.douglas.actions.Actions
 import com.douglas.actions.extras.Account
+import com.douglas.core.BaseActivity
 import com.douglas.extensions.bindView
 import com.douglas.extensions.onClick
 import com.douglas.login.injection.initializeLoginModule
@@ -17,13 +17,12 @@ import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-private val loadLogin by lazy { initializeLoginModule() }
-private fun injectLogin() = loadLogin
+private val loadLoginModule by lazy { initializeLoginModule() }
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : BaseActivity() {
 
     private val progressBar: ProgressBar by bindView(R.id.progressBar)
-    private val networkErrorMesagge: TextView by bindView(R.id.networkErrorMessage)
+    private val networkErrorMessage: TextView by bindView(R.id.networkErrorMessage)
     private val usernameLayout: TextInputLayout by bindView(R.id.username_layout)
     private val passwordLayout: TextInputLayout by bindView(R.id.password_layout)
     private val username: TextInputEditText by bindView(R.id.username)
@@ -36,20 +35,27 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        injectLogin()
         observeViewModel()
 
-        loginButton.onClick {
-            showLoading()
-            clearErrorMessages()
-            loginViewModel.authenticate(username.text.toString(), password.text.toString())
-        }
+        setupLoginButton()
     }
 
     override fun onResume() {
         super.onResume()
         clearInputValues()
         loginViewModel.getLastLoggeduser()
+    }
+
+    override fun initializeInjection() {
+        loadLoginModule
+    }
+
+    private fun setupLoginButton() {
+        loginButton.onClick {
+            showLoading()
+            clearErrorMessages()
+            loginViewModel.authenticate(username.text.toString(), password.text.toString())
+        }
     }
 
     private fun observeViewModel() {
@@ -90,13 +96,13 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun networkError() {
-        networkErrorMesagge.visibility = View.VISIBLE
+        networkErrorMessage.visibility = View.VISIBLE
     }
 
     private fun clearErrorMessages() {
         usernameLayout.isErrorEnabled = false
         passwordLayout.isErrorEnabled = false
-        networkErrorMesagge.visibility = View.GONE
+        networkErrorMessage.visibility = View.GONE
     }
 
     private fun showLoading() {
@@ -111,5 +117,4 @@ class LoginActivity : AppCompatActivity() {
         username.text?.clear()
         password.text?.clear()
     }
-
 }

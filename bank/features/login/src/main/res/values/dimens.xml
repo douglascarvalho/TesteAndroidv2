@@ -6,5 +6,7 @@
     <dimen name="username_top_margin">105dp</dimen>
     <dimen name="password_top_margin">21dp</dimen>
     <dimen name="login_button_bottom_margin">33dp</dimen>
-
+    <dimen name="login_button_bottom_width">202dp</dimen>
+    <dimen name="login_button_bottom_height">62dp</dimen>
+    <dimen name="network_error_message_text_size">14sp</dimen>
 </resources>
