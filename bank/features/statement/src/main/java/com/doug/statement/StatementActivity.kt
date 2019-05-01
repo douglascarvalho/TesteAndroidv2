@@ -3,19 +3,18 @@ package com.doug.statement
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
 import com.doug.statement.injection.initializeStatementModule
 import com.doug.statement.model.Statement
 import com.douglas.actions.extras.Account
+import com.douglas.core.BaseActivity
 import com.douglas.extensions.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-private val loadStatement by lazy { initializeStatementModule() }
-private fun injectStatement() = loadStatement
+private val loadStatementModule by lazy { initializeStatementModule() }
 
-class StatementActivity : AppCompatActivity() {
+class StatementActivity : BaseActivity() {
 
     private val statementViewModel: StatementViewModel by viewModel()
 
@@ -33,16 +32,24 @@ class StatementActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_statement)
 
-        injectStatement()
         observeViewModel()
-        setupStatementList()
-        setupLogoutButton()
 
+        setupStatementHeader()
+        setupStatementList()
+
+        statementViewModel.getStatement(account.id)
+    }
+
+    override fun initializeInjection() {
+        loadStatementModule
+    }
+
+    private fun setupStatementHeader() {
         accountOwner.text = account.name
         accountNumber.text = getString(R.string.account_format, account.agency, account.bankAccount.toBankAccountFormat())
         accountBalance.text = account.balance.toBrazilianCurrency()
 
-        statementViewModel.getStatement(account.id)
+        setupLogoutButton()
     }
 
     private fun setupLogoutButton() {
