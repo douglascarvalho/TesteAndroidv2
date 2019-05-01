@@ -6,19 +6,19 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
-        app:cardCornerRadius="5dp"
-        app:elevation="5dp">
+        android:layout_marginStart="@dimen/statement_card_default_margin"
+        android:layout_marginEnd="@dimen/statement_card_default_margin"
+        android:layout_marginTop="@dimen/statement_card_default_margin"
+        app:cardCornerRadius="@dimen/statement_card_corner_radius"
+        app:elevation="@dimen/statement_card_elevation">
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="14dp"
-            android:layout_marginBottom="14dp"
-            android:layout_marginStart="14dp"
-            android:layout_marginEnd="14dp">
+            android:layout_marginTop="@dimen/statement_item_card_default_margin"
+            android:layout_marginBottom="@dimen/statement_item_card_default_margin"
+            android:layout_marginStart="@dimen/statement_item_card_default_margin"
+            android:layout_marginEnd="@dimen/statement_item_card_default_margin">
 
         <TextView
                 android:id="@+id/statement_title"
@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:textSize="12dp"
+                android:textSize="@dimen/statement_item_date_text_size"
                 tools:text="12/12/2018" />
 
         <TextView
@@ -44,7 +44,7 @@
                 style="@style/TextViewItemBody"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/statement_item_body_top_margin"
                 app:layout_constraintTop_toBottomOf="@id/statement_title"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:text="Conta de Luz" />
@@ -54,11 +54,11 @@
                 style="@style/TextViewItemBody"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="right"
+                android:layout_marginTop="@dimen/statement_item_body_top_margin"
+                android:gravity="end"
                 app:layout_constraintTop_toBottomOf="@id/statement_date"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:textSize="20dp"
+                android:textSize="@dimen/statement_item_value_text_size"
                 tools:text="R$1.000,00" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,8 +5,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:animateLayoutChanges="true"
->
+        android:animateLayoutChanges="true">
 
     <androidx.appcompat.widget.Toolbar
             android:id="@+id/statement_toolbar"
@@ -20,39 +19,37 @@
         <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="17dp">
+                android:layout_marginTop="@dimen/statement_header_top_margin"
+                android:layout_marginBottom="@dimen/statement_header_bottom_margin">
 
             <TextView
-                    style="@style/TextViewValueStatement"
                     android:id="@+id/account_owner"
+                    style="@style/TextViewValueStatement"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    tools:text="José da Silva Teste"
-            />
+                    tools:text="José da Silva Teste" />
 
             <ImageView
                     android:id="@+id/logout"
-                    android:layout_width="27dp"
-                    android:layout_height="27dp"
+                    android:layout_width="@dimen/statement_logout_item_size"
+                    android:layout_height="@dimen/statement_logout_item_size"
                     android:src="@drawable/logout"
-                    android:layout_marginRight="13dp"
+                    android:layout_marginEnd="@dimen/statement_logout_margin_end"
                     app:layout_constraintTop_toTopOf="@id/account_owner"
                     app:layout_constraintBottom_toBottomOf="@+id/account_owner"
-                    app:layout_constraintEnd_toEndOf="parent"
-            />
+                    app:layout_constraintEnd_toEndOf="parent" />
 
             <TextView
-                    style="@style/TextViewLabelStatement"
                     android:id="@+id/account_label"
+                    style="@style/TextViewLabelStatement"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="28dp"
+                    android:layout_marginTop="@dimen/statement_account_margin_top"
                     app:layout_constraintTop_toBottomOf="@id/account_owner"
                     app:layout_constraintStart_toStartOf="parent"
-                    android:text="Conta" />
+                    android:text="@string/account" />
 
             <TextView
                     style="@style/TextViewValueStatement"
@@ -64,18 +61,18 @@
                     tools:text="2050 / 01.111222-4" />
 
             <TextView
-                    style="@style/TextViewLabelStatement"
                     android:id="@+id/balance_label"
+                    style="@style/TextViewLabelStatement"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="21dp"
+                    android:layout_marginTop="@dimen/statement_balance_margin_top"
                     app:layout_constraintTop_toBottomOf="@id/account_number"
                     app:layout_constraintStart_toStartOf="parent"
-                    android:text="Saldo" />
+                    android:text="@string/balance" />
 
             <TextView
-                    style="@style/TextViewValueStatement"
                     android:id="@+id/account_balance"
+                    style="@style/TextViewValueStatement"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     app:layout_constraintTop_toBottomOf="@id/balance_label"
@@ -89,19 +86,18 @@
             android:id="@+id/recent_label"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:layout_marginStart="18dp"
-            android:text="Recentes"
+            android:layout_marginTop="@dimen/statement_recent_margin_top"
+            android:layout_marginStart="@dimen/statement_recent_margin_start"
+            android:text="@string/recent"
             app:layout_constraintTop_toBottomOf="@id/statement_toolbar"
-            app:layout_constraintStart_toStartOf="parent"
-             />
+            app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/statement_list"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="4dp"
-            android:paddingBottom="16dp"
+            android:layout_marginTop="@dimen/statement_recent_list_margin_top"
+            android:paddingBottom="@dimen/statement_recent_list_padding_bottom"
             android:clipToPadding="false"
             app:layout_constraintTop_toBottomOf="@id/recent_label"
             app:layout_constraintStart_toStartOf="parent"
@@ -109,8 +105,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:orientation="vertical"
-            tools:listitem="@layout/item_statement"
-
-    />
+            tools:listitem="@layout/item_statement" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
