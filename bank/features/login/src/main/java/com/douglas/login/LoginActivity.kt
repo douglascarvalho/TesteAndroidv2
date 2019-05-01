@@ -46,6 +46,12 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        clearInputValues()
+        loginViewModel.getLastLoggeduser()
+    }
+
     private fun observeViewModel() {
         loginViewModel.viewState.observe(this, Observer {
             hideLoading()
@@ -99,6 +105,11 @@ class LoginActivity : AppCompatActivity() {
 
     private fun hideLoading() {
         progressBar.visibility = View.GONE
+    }
+
+    private fun clearInputValues() {
+        username.text?.clear()
+        password.text?.clear()
     }
 
 }

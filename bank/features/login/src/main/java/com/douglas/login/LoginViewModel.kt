@@ -19,13 +19,14 @@ class LoginViewModel(
     private val state = MutableLiveData<LoginViewState>()
     val viewState: LiveData<LoginViewState> = state
 
-    init {
+    fun getLastLoggeduser() {
         launch {
             loginUseCase.getLastLoggedUser()?.let {
                 state.value = LoginViewState.SuggestLastLoggedUser(it.user)
             }
         }
     }
+
     fun authenticate(username: String, password: String) {
         if (isUsernameAndPasswordValid(username, password)) {
             signIn(LoginRequest(username, password))
