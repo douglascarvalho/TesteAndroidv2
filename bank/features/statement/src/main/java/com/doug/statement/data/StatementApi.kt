@@ -10,6 +10,6 @@ private const val USER_ID = "userId"
 interface StatementApi {
 
     @GET("/api/statements/{$USER_ID}")
-    fun getStatement(@Path(USER_ID) userId: String): Deferred<Response<StatementResponse>>
+    fun getStatement(@Path(USER_ID) userId: Int): Deferred<Response<StatementResponse>>
 
 }

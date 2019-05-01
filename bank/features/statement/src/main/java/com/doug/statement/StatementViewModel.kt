@@ -13,7 +13,7 @@ class StatementViewModel(
     private val state = MutableLiveData<StatementViewState>()
     val viewState: LiveData<StatementViewState> = state
 
-    fun getStatement(id: String) {
+    fun getStatement(id: Int) {
         launch {
             val statementResponse = statementUseCase.getStatement(id)
             statementResponse?.let {

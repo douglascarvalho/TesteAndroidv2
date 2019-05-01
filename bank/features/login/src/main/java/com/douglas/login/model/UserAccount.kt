@@ -5,9 +5,9 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class UserAccount(
-    val userId: String,
+    val userId: Int,
     val name: String,
     val bankAccount: String,
     val agency: String,
-    val balance: String
+    val balance: Double
 ) : Parcelable

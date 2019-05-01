@@ -4,7 +4,9 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+>
 
     <androidx.appcompat.widget.Toolbar
             android:id="@+id/statement_toolbar"
@@ -89,6 +91,9 @@
             android:id="@+id/statement_list"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginTop="4dp"
+            android:paddingBottom="16dp"
+            android:clipToPadding="false"
             app:layout_constraintTop_toBottomOf="@id/recent_label"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

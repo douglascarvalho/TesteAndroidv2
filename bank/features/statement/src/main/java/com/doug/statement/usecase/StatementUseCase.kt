@@ -9,7 +9,7 @@ class StatementUseCase (
     private val statementApi: StatementApi
 ) {
 
-    suspend fun getStatement(id: String) : StatementResponse? = withContext(Dispatchers.IO) {
+    suspend fun getStatement(id: Int) : StatementResponse? = withContext(Dispatchers.IO) {
         val response = statementApi.getStatement(id).await()
         return@withContext if (response.isSuccessful) response.body() else null
     }

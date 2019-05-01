@@ -4,13 +4,13 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.doug.statement.injection.initializeStatementModule
 import com.doug.statement.model.Statement
 import com.douglas.actions.extras.Account
 import com.douglas.extensions.bindBundle
 import com.douglas.extensions.bindView
+import com.douglas.extensions.toBrazilianCurrency
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 private val loadStatement by lazy { initializeStatementModule() }
@@ -39,7 +39,7 @@ class StatementActivity : AppCompatActivity() {
 
         accountOwner.text = account.name
         accountNumber.text = "${account.bankAccount} / ${account.agency}"
-        accountBalance.text = account.balance
+        accountBalance.text = account.balance.toBrazilianCurrency()
 
         statementViewModel.getStatement(account.id)
     }

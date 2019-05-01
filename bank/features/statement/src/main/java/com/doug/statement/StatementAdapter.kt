@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.doug.statement.model.Statement
 import com.douglas.extensions.bindView
+import com.douglas.extensions.toBrazilianCurrency
+import com.douglas.extensions.toBrazilianFormat
 
 class StatementAdapter : ListAdapter<Statement, StatementAdapter.ViewHolder>(DiffCallback()) {
 
@@ -21,15 +23,15 @@ class StatementAdapter : ListAdapter<Statement, StatementAdapter.ViewHolder>(Dif
 
     class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
         private val statementTitle: TextView by bindView(R.id.statement_title)
-        private val statementDate: TextView by bindView(R.id.statement_date)
         private val statementDescription: TextView by bindView(R.id.statement_description)
+        private val statementDate: TextView by bindView(R.id.statement_date)
         private val statementValue: TextView by bindView(R.id.statement_value)
 
         fun bindView(item: Statement) {
             statementTitle.text = item.title
-            statementDate.text = item.date.toString()
             statementDescription.text = item.description
-            statementValue.text = item.value.toString()
+            statementDate.text = item.date.toBrazilianFormat()
+            statementValue.text = item.value.toBrazilianCurrency()
         }
     }
 

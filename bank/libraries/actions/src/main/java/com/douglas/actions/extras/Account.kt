@@ -5,11 +5,11 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class Account(
-    val id: String,
+    val id: Int,
     val name: String,
     val bankAccount: String,
     val agency: String,
-    val balance: String
+    val balance: Double
 ) : Parcelable {
     companion object {
         const val EXTRA_KEY = "account"
