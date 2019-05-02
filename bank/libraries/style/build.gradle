@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
 
 dependencies {
-    implementation Dependencies.androidx_material
+    api Dependencies.androidx_material
 }

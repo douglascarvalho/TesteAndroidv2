@@ -33,6 +33,7 @@ subprojects {
                     minSdkVersion Config.minSdk
                     targetSdkVersion Config.targetSdk
                     testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+                    multiDexEnabled true
                 }
 
                 compileOptions {

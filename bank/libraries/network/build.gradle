@@ -6,5 +6,7 @@ dependencies {
     api Dependencies.retrofit_gson_converter
     api Dependencies.retrofit_coroutines_adapter
 
+    api Dependencies.logging_interceptor
+
     api Dependencies.kotlin_stdlib
 }

@@ -28,12 +28,25 @@ object Versions {
     val junit = "4.12"
     val androidx_espresso = "3.1.0"
     val androidx_testing = "1.1.1"
+    val mockwebserver = "3.12.0"
 
     val gradleandroid = "3.4.0"
     val kotlin = "1.3.21"
     val kotlin_coroutines = "1.2.0"
+    val kotlin_coroutines_test = "1.1.1"
+
+    val arch_core_testing = "1.1.1"
+
+    val espresso_idling_resource = "3.2.0-alpha05"
+    val okhttp_idling_resource = "1.0.0"
+
+    val mockk_android = "1.9.3"
+    val objenesis = "2.6"
+
+    val logging_interceptor = "3.11.0"
 
     val saferoomx = "1.0.2"
+    val multidex = "1.0.3"
 }
 
 object Dependencies {
@@ -62,11 +75,25 @@ object Dependencies {
     val testandroidx_runner = "androidx.test:runner:${Versions.androidx_testing}"
     val testandroidx_espressocore = "androidx.test.espresso:espresso-core:${Versions.androidx_espresso}"
 
+    val mockwebserver = "com.squareup.okhttp3:mockwebserver:${Versions.mockwebserver}"
+
     val tools_gradleandroid = "com.android.tools.build:gradle:${Versions.gradleandroid}"
     val tools_kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
 
     val kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
     val kotlin_coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.kotlin_coroutines}"
+    val kotlin_coroutines_test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.kotlin_coroutines_test}"
+
+    val arch_core_testing = "android.arch.core:core-testing:${Versions.arch_core_testing}"
+
+    val espresso_idling_resource = "androidx.test.espresso:espresso-idling-resource:${Versions.espresso_idling_resource}"
+    val okhttp_idling_resource = "com.jakewharton.espresso:okhttp3-idling-resource:${Versions.okhttp_idling_resource}"
+
+    val mockk_android = "io.mockk:mockk-android:${Versions.mockk_android}"
+    val objenesis = "org.objenesis:objenesis:${Versions.objenesis}"
+
+    val logging_interceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.logging_interceptor}"
 
     val saferoomx = "com.commonsware.cwac:saferoom.x:${Versions.saferoomx}"
+    val multidex = "com.android.support:multidex:${Versions.multidex}"
 }

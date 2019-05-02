@@ -4,27 +4,8 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 dependencies {
-
-    implementation project(':libraries:network')
     implementation project(':libraries:core')
     implementation project(':libraries:actions')
     implementation project(':libraries:extensions')
     implementation project(':libraries:style')
-
-    api Dependencies.retrofit
-
-    api Dependencies.androidx_material
-    implementation Dependencies.androidx_appcompat
-    implementation Dependencies.androidx_constraintlayout
-    implementation Dependencies.koin_android
-    implementation Dependencies.koin_androidx_viewmodel
-
-    implementation Dependencies.gson
-
-    implementation Dependencies.kotlin_stdlib
-    testImplementation Dependencies.testlib_junit
-
-    androidTestImplementation Dependencies.testandroidx_runner
-    androidTestImplementation Dependencies.testandroidx_rules
-    androidTestImplementation Dependencies.testandroidx_espressocore
 }

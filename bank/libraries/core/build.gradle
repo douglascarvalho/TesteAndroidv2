@@ -2,7 +2,38 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 dependencies {
+    api project(':libraries:network')
+
     api Dependencies.androidx_appcompat
-    api Dependencies.kotlin_coroutines
+    api Dependencies.androidx_appcompat
+    api Dependencies.androidx_constraintlayout
+
+    api Dependencies.koin_android
     api Dependencies.koin_androidx_viewmodel
+
+    api Dependencies.kotlin_coroutines
+    api Dependencies.kotlin_stdlib
+
+    api Dependencies.gson
+
+    api Dependencies.testlib_junit
+
+    api Dependencies.testandroidx_runner
+    api Dependencies.testandroidx_rules
+    api Dependencies.testandroidx_espressocore
+
+    api Dependencies.mockwebserver
+
+    api Dependencies.kotlin_coroutines_test
+
+    api Dependencies.arch_core_testing
+
+    api Dependencies.espresso_idling_resource
+    api Dependencies.okhttp_idling_resource
+
+    api("io.mockk:mockk-android:1.9.3") {
+        exclude module: 'objenesis'
+    }
+
+    api Dependencies.objenesis
 }

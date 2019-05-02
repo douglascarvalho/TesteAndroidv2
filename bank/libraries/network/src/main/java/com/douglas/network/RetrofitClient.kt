@@ -11,6 +11,7 @@ object RetrofitClient {
     fun retrofit() =
             Retrofit.Builder()
                 .baseUrl(URL)
+                .client(OkHttpProvider.instance)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(CoroutineCallAdapterFactory())
                 .build()
