@@ -6,15 +6,16 @@ object LoginValidation {
 
     fun isWeakPassword(password: String) : Boolean {
         return (
-                password.contains("[^A-Za-z0-9_]".toRegex()) &&
-                        password.contains("[A-Z]${"+"}".toRegex()) &&
-                        password.contains("[a-zA-Z0-9]${"+"}".toRegex())
+                password.contains("(?=.*?[#?!@\$%^&*-])".toRegex()) &&
+                        password.contains("(.*\\d.*)".toRegex()) &&
+                        password.contains("(.*[A-Z].*)".toRegex())
                 ).not()
     }
 
     fun isInvalidUsername(username: String) : Boolean {
 
-        fun isEmail() = Patterns.EMAIL_ADDRESS.matcher(username).matches()
+        fun isEmail() =
+            username.matches("[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}\\@[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}(\\.[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25})${"+"}".toRegex())
 
         fun isCPF(): Boolean {
             if (username.isEmpty()) return false

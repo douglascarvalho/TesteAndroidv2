@@ -51,9 +51,9 @@ class LoginViewModel(
     private fun signIn(loginRequest: LoginRequest) {
         launch {
             try {
-                val userAccount = loginUseCase.doLogin(loginRequest)
+                val loginResponse = loginUseCase.doLogin(loginRequest)
 
-                userAccount?.let {
+                loginResponse?.let {
                     if (hasLoginFailed(it.error)) {
                         state.value = LoginViewState.Error(it.error)
                     } else {
