@@ -8,6 +8,7 @@ import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.rule.ActivityTestRule
 import androidx.test.runner.AndroidJUnit4
 import com.douglas.actions.extras.Account
+import com.douglas.core.instantLiveDataAndCoroutineRule
 import okhttp3.mockwebserver.MockWebServer
 import org.junit.Before
 import org.junit.Rule
@@ -23,7 +24,7 @@ class StatementActivityTest {
     val activityTestRule = ActivityTestRule(StatementActivity::class.java, true, false)
 
     @get:Rule
-    val coroutinesRule = instantLiveDataAndCoroutineRules
+    val coroutinesRule = instantLiveDataAndCoroutineRule
 
     @get:Rule
     var okHttpRule = OkHttpIdlingResourceRule()

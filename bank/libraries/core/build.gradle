@@ -16,20 +16,19 @@ dependencies {
 
     api Dependencies.gson
 
+    api Dependencies.mockitokotlint2
+    api Dependencies.mockito_inline
     api Dependencies.testlib_junit
 
     api Dependencies.testandroidx_runner
     api Dependencies.testandroidx_rules
     api Dependencies.testandroidx_espressocore
-
-    api Dependencies.mockwebserver
-
-    api Dependencies.kotlin_coroutines_test
-
-    api Dependencies.arch_core_testing
-
     api Dependencies.espresso_idling_resource
     api Dependencies.okhttp_idling_resource
+    api Dependencies.arch_core_testing
+    api Dependencies.kotlin_coroutines_test
+
+    api Dependencies.mockwebserver
 
     api("io.mockk:mockk-android:1.9.3") {
         exclude module: 'objenesis'

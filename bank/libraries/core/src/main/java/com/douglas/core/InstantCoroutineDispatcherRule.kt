@@ -1,4 +1,4 @@
-package com.doug.statement
+package com.douglas.core
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import kotlinx.coroutines.Dispatchers
@@ -9,7 +9,7 @@ import org.junit.rules.RuleChain
 import org.junit.rules.TestWatcher
 import org.junit.runner.Description
 
-val instantLiveDataAndCoroutineRules: RuleChain
+val instantLiveDataAndCoroutineRule: RuleChain
     get() = RuleChain
         .outerRule(InstantCoroutineDispatcherRule())
         .around(InstantTaskExecutorRule())

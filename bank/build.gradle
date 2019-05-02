@@ -9,6 +9,7 @@ buildscript {
     dependencies {
         classpath Dependencies.tools_gradleandroid
         classpath Dependencies.tools_kotlin
+        classpath Dependencies.allopen
     }
 }
 

@@ -40,6 +40,8 @@ object Versions {
     val espresso_idling_resource = "3.2.0-alpha05"
     val okhttp_idling_resource = "1.0.0"
 
+    val mockito_inline = "2.7.13"
+    val mockitokotlint2 = "2.1.0"
     val mockk_android = "1.9.3"
     val objenesis = "2.6"
 
@@ -89,6 +91,8 @@ object Dependencies {
     val espresso_idling_resource = "androidx.test.espresso:espresso-idling-resource:${Versions.espresso_idling_resource}"
     val okhttp_idling_resource = "com.jakewharton.espresso:okhttp3-idling-resource:${Versions.okhttp_idling_resource}"
 
+    val mockito_inline = "org.mockito:mockito-inline:${Versions.mockito_inline}"
+    val mockitokotlint2 = "com.nhaarman.mockitokotlin2:mockito-kotlin:${Versions.mockitokotlint2}"
     val mockk_android = "io.mockk:mockk-android:${Versions.mockk_android}"
     val objenesis = "org.objenesis:objenesis:${Versions.objenesis}"
 
@@ -96,4 +100,6 @@ object Dependencies {
 
     val saferoomx = "com.commonsware.cwac:saferoom.x:${Versions.saferoomx}"
     val multidex = "com.android.support:multidex:${Versions.multidex}"
+    val allopen = "org.jetbrains.kotlin:kotlin-allopen:${Versions.kotlin}"
+
 }
