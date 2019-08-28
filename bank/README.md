@@ -1,3 +1,5 @@
+![Image of Yaktocat](https://github.com/SantanderTecnologia/TesteiOS/blob/new_test/telas.png)
+
 ## Arquitetura (overview)
 
 - MVVM
